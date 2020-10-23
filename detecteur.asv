@@ -1,4 +1,4 @@
-function [ Test ] = detecteur( I,sigma )
+function [ D ] = detecteur( I,sigma )
 %DETECTEUR Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -20,7 +20,7 @@ Cxy=conv2(Ix.*Iy,G);
 Cxx=conv2((Ix.*Ix),G);
 Cyy=conv2((Iy.*Iy),G);
 
-Test=Cxx.*Cyy-Cxy.*Cxy-lambda*(Cxx+Cyy).^2;
+D=Cxx*Cyy-Cxy*Cxy-lambda(Cxx+Cyy)^2;
 
 end
 

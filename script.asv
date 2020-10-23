@@ -47,13 +47,13 @@ Ilum=Iluminance(:,:,1);
 sigma=2;
 D=detecteur(Ilum,sigma);
 
-seuil =-3;
-A=D;
+seuil =2;
+A=Iluminance;
 for i=1:100
     for j=1:100
         
-        if (D(i,j)>seuil)
-            A(i,j)=0;
+        if (D(i,j)<seuil)
+            A(i,j,1)=0;
         end
     end
 end
